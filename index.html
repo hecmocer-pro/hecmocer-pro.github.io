@@ -4,35 +4,18 @@
 	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 	<style>
 		body {
-			font-family: sans-serif;
-			background-color: honeydew;
-			margin-top: 50px;
-			margin-bottom: 50px;
-			margin-left: 75px;
-			margin-right: 75px;
+			margin: 0;
+			font-family: 'verdana', sans-serif;
+			font-family: 'montserrat', sans-serif;
+			--webkit-font-smoothing: antialiased;
+			color: white;
 		}
-		img {
-			margin-right: 20px;
-			border: 3px solid honeydew;
-			padding: 3px;
+		h1 {
+			padding: 0;
 		}
-		img:hover { border: 3px solid fuchsia; }
-		h1,h2 { font-family: "Lucida Console", Monaco, monospace; }
-		a {
-			color: blue;
-			font-weight: 700;
-			text-decoration: none;
+		h2 {
+			padding: 0;
 		}
-		a:hover {
-			color: fuchsia;
-		}
-		
-		span { font-weight: 700px; }
-		.blue {	color: blue; }
-		.green { color: green; }
-		.yellow { color: goldenrod; }
-		.red { color:red; }
-		
 	</style>
 	
 	<title>Hecmocer | Programmer</title>
@@ -42,10 +25,338 @@
 	<meta name="author" content="Hecmocer">
 </head>
 <body>
+
+	<style>
+		/* LANDING */
+		.landing {
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			/* background-color: #eee; */
+			color: black;
+		}
+		.landing section {
+			height: 90vh;
+			width: 100%;
+			border-bottom: solid 1px black;
+			display: flex;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+
+		/* EXPERIENCE */
+		.experience {
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			background-color: #eee;
+			color: black;
+		}
+		.experience .sticky {
+			height: 30px;
+			width: 100%;
+			position: sticky;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: palegreen;
+			top: 0;
+			color: black;
+			z-index: 1;
+		}
+		.experience section {
+			height: 90vh;
+			width: 100%;
+			border-bottom: solid 1px black;
+			display: flex;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		.experience section::before {
+			content: '';
+			background-color: #000;
+			box-shadow: 0 0 0 1px #eeeeee66;
+			width: 5px;
+			position: relative;
+			display: inline-block;
+			height: 100%;
+			top: 0;
+			left: 100px;
+		}
+		.experience section:first-of-type::before {
+			top: 20%;
+			height: 80%;
+		}
+		.experience .jll {
+			background-color: #5c7491;
+			background-position: 22% 20%;
+		}
+		.experience .wombat {
+			background-color: #f88037;
+			background-position: 50% 10%;
+		}
+		.experience .composer {
+			background-color: #789e47;
+			background-position: 70% 70%;
+		}
+		.experience .shap {
+			background-color: #b69583;
+			background-position: 50% 55%;
+		}
+		.experience .babel {
+			background-color: #6996c0;
+			background-position: 65% 90%;
+		}
+		.experience .erasmus {
+			background-color: #343f46;
+			background-position: 50% 30%;
+		}
+		.experience .upm {
+			background-color: #bbc4d5;
+			background-image: url('media/upm.jpeg');
+			background-position: 55% 0%;
+		}
+		.experience .jll h3 {
+			color: #000;
+		}
+		.experience .wombat h3 {
+			color: #000;
+		}
+		.experience .composer h3 {
+			color: #000;
+		}
+		.experience .erasmus h3 {
+			color: #333;
+		}
+		.experience .section-content {
+			position: relative;
+			left: 100px;
+			padding: 26vh 20px 0 50px;
+			height: 64vh;
+			z-index: 0;
+			width: 320px;
+			line-height: 1.7;
+			letter-spacing: 0.3px;
+			word-spacing: 1px;
+			transition: opacity 0.6s;
+		}
+		.experience section:first-of-type .section-content {
+			padding: 7vh 20px 0 50px;
+			top: 18vh;
+			height: 65vh;
+		}
+		.section-content::before{
+			content: '';
+			background-color: rgba(255,255,255,1);
+			opacity: 0.7;
+			width: 120%;
+			height: 100%;
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			left: 0;
+		}
+		section:first-of-type .section-content::before{
+			border-radius: 0 40px 0 0;
+		}
+		.experience h2::before {
+			content: '';
+			position: absolute;
+			border-radius: 50%;
+			background-color: black;
+			height: 20px;
+			width: 20px;
+			left: -12px;
+			margin-top: 5px;
+		}
+		.experience h3 {
+			color: #444;
+		}
+		.experience h2 {
+			border-radius: 2px;
+			background-color: #000;
+			color: #fff;
+			width: fit-content;
+			padding: 5px 10px;
+		}
+		.experience h4 {
+			padding-top: 10px;
+		}
+		@media (max-width: 500px) {
+			.experience .section-content {
+				left: 50px;
+			}
+			.experience section::before {
+				left: 20px;
+			}
+			.experience h2::before {
+				left: -41px;
+			}
+		}
+		
+		/* MORE */
+		.more {
+			width: 100%;
+			background-color: #eee;
+			color: black;
+			min-height: 100vh;
+		}
+		.more section {
+			width: 100%;
+			padding: 20px 0 5px 150px;
+		}
+		.more section:first-of-type {
+			padding-top: 80px;
+		}
+		.more section:last-of-type {
+			padding-bottom: 80px;
+		}
+		.more li {
+			padding-top: 10px;
+		}
+		.more h2 {
+			word-spacing: 3px;
+		}
+		@media (max-width: 500px) {
+			.more section {
+				padding-left: 20px;
+			}
+		}
+	</style>
+	<div class="landing">
+		<section>
+			Lorem ipsum
+		</section>
+	</div>
+	<div class="experience">
+		<div class="sticky">Experiences / Education</div>
+		<section class="jll">
+			<div class="section-content">
+				<h3>2018 − 01</h3>
+				<h2>JLL</h2>
+				<h4>TBD...</h4>
+			</div>
+		</section>
+		<section class="wombat">
+			<div class="section-content">
+				<h3>2017 − 07</h3>
+				<h2>BBVA - Wombat</h2>
+				<h4>Crafting a web application for creating custom advertising campaigns, using Polymer Hybrid</h4>
+			</div>
+		</section>
+		<section class="composer">
+			<div class="section-content">
+				<h3>2017 − 02</h3>
+				<h2>BBVA - Composer</h2>
+				<h4>Developing a web application for building websites based on web components, using Polymer 2.0</h4>
+			</div>
+		</section>
+		<section class="shap">
+			<div class="section-content">
+				<h3>2016 − 07</h3>
+				<h2>BBVA - ShoppingApp</h2>
+				<h4>Building a Web and mobile application for reviewing closeby promotions, using Polymer 1.x and Cordova</h4>
+			</div>
+		</section>
+		<section class="babel">
+			<div class="section-content">
+				<h3>2016 − 02</h3>
+				<h2>BABEL</h2>
+				<h4>Developed Several POCs and a trading application, using several web technologies such as HTML-JS-CSS, Node, Angular and Bootstrap</h4>
+			</div>
+		</section>
+		<section class="erasmus">
+			<div class="section-content">
+				<h3>2015 − 08</h3>
+				<h2>RUC - Erasmus</h2>
+				<h4>Went to Roskilde, Denmark to finish my college degree. Attended master courses on AI and fullstack web development</h4>
+			</div>
+		</section>
+		<section class="upm">
+			<div class="section-content">
+				<h3>2012 − 09</h3>
+				<h2>UPM</h2>
+				<h4>Started studying Computer Science & Mathematics degree at UPM, Spain. Created a windows application for graph viewing and algorithmic triangulation using C#</h4>
+			</div>
+		</section>
+	</div>
+	<div class="more">
+		<section>
+			<h2>🎤 Talks & featured in</h2>
+			<ul>
+				<li><a href="https://twitter.com/BABELgrupo/status/948948403861573633">Web Components Geeky Pills</a></li>
+				<li><a href="https://twitter.com/BABELgrupo/status/948948403861573633">Web Components Geeky Pills - teaser</a></li>
+				<li><a href="https://www.youtube.com/watch?v=Kf887zEKMsA">Polymer 2.0 from square one</a></li>
+				<li><a href="https://www.youtube.com/watch?v=eqfqdG6ux00">Polymer 2.0 from square one - summary</a></li>
+				<li><a href="https://www.youtube.com/watch?v=V4sr31M7T2U">Babelcamp 2017</a></li>
+			</ul>
+		</section>
+		<section>
+			<h2>💻 Side projects</h2>
+			<ul>
+				<li>Launchpad project (WIP) — Node & web client</li>
+				<li>Personal website v2.0 — Native Web Components</li>
+				<li>Personal website — Web Components & Polymer 1.x</li>
+				<li>VR videogame — A-Frame</li>
+				<li>Web backend — NodeJS & MongoDB</li>
+				<li>Online music player — HTML5, CSS3, JS</li>
+				<li>Full-stack StackOverflow clone — C# & Jquery</li>
+				<li>Checkers Artificial Inteligence — C++ (console application)</li>
+			</ul>
+		</section>
+		<section>
+			<h2>📚 References</h2>
+			<ul>
+				<li>JLL — <a href="https://images.pexels.com/photos/2166/flight-sky-earth-space.jpg">flight-sky-earth-space</a></li>
+				<li>Wombat — <a href="https://images.pexels.com/photos/390051/surfer-wave-sunset-the-indian-ocean-390051.jpeg">surfer-wave-sunset-the-indian-ocean</a></li>
+				<li>Composer — <a href="https://images.pexels.com/photos/101667/pexels-photo-101667.jpeg">pexels-photo-101667</a></li>
+				<li>ShoppingApp — <a href="https://images.pexels.com/photos/35550/ipad-tablet-technology-touch.jpg">ipad-tablet-technology-touch</a></li>
+				<li>Babel — <a href="https://images.pexels.com/photos/6542/landscape-animal-mountain-top.jpg">landscape-animal-mountain-top</a></li>
+				<li>Erasmus — <a href="https://static.pexels.com/photos/237353/pexels-photo-237353.jpeg">pexels-photo-237353</a></li>
+				<li>UPM — <a href="https://images.pexels.com/photos/136133/pexels-photo-136133.jpeg">pexels-photo-136133</a></li>
+				<li>Reduced image size thanks to <a href="https://compress-or-die.com/png-process">compress-or-die</a></li></li>
+			</ul>
+		</section>
+	</div>
 	
-	<p>
-		Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab ad explicabo soluta amet sit hic. Facilis voluptate, commodi nam, dolorum earum aspernatur architecto excepturi sapiente animi at magni consequuntur maxime!
-	</p>
-	
+	<script>
+		document.body.onload = function() {
+			this.loadFont('https://fonts.googleapis.com/css?family=Montserrat');
+			this.asyncLoadImage('section.jll', 'media/jll XS.png', 'media/jll XL.png');
+			this.asyncLoadImage('section.wombat', 'media/wombat XS.png', 'media/wombat XL.jpeg');
+			this.asyncLoadImage('section.composer', 'media/composer XS.png', 'media/composer XL.jpeg');
+			this.asyncLoadImage('section.shap', 'media/shap XS.png', 'media/shap XL.jpg');
+			this.asyncLoadImage('section.babel', 'media/babel XS.png', 'media/babel XL.jpg');
+			this.asyncLoadImage('section.erasmus', 'media/erasmus XS.png', 'media/erasmus XL.png');
+		}
+
+		function loadFont(url) {
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', url, true);
+			xhr.onreadystatechange = function () {
+				if (xhr.readyState == 4 && xhr.status == 200) {
+					var style = document.createElement('style');
+					style.innerHTML = xhr.responseText;
+					document.head.appendChild(style);
+				}
+			};
+			xhr.send();
+		}
+
+		function asyncLoadImage(containerSelector, lowResUrl, hiResUrl) {
+			const container = document.querySelector(containerSelector);
+			const lowRes = new Image();
+			const hiRes = new Image();
+			lowRes.onload = function(){
+				container.style.backgroundImage = 'url(' + lowRes.src + ')';
+				hiRes.src = hiResUrl;
+			};
+			hiRes.onload = function() {
+				container.style.backgroundImage = 'url(' + hiRes.src + ')';
+			}
+			lowRes.src = lowResUrl;
+		}
+		
+	</script>
 </body>
 </html>
