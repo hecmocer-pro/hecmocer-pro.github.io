@@ -42,11 +42,44 @@
 			/* height: 78%; */
 			width: 100%;
 			border-bottom: solid 1px black;
-			display: flex;
 			background-image: url('./landing.jpg');
 			background-position: 45% 50%;
 			background-repeat: no-repeat;
 			background-size: cover;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+		.landing h2 {
+			position: relative;
+			padding: 10px 20px;
+			background-color: rgba(255,255,255,0.9);
+			box-shadow: 20px 50px 200px black;
+			color: black;
+			border-radius: 2px;
+			letter-spacing: -1px;
+			line-height: 1.5;
+    	position: sticky;
+    	top: 5%;
+		}
+		.landing strong {
+			font-size: 32px;
+    	letter-spacing: 0;
+		}
+		.landing h3 {
+			padding-left: 10px;
+			position: relative;
+			color: white;
+			z-index: 1;
+			letter-spacing: 3px;
+		}
+		.landing .text {
+			margin: 0 auto 0 55%;
+			position: sticky;
+    	top: 5%;
+		}
+		.landing .separation {
+			font-size: 20px;
 		}
 
 		/* EXPERIENCE */
@@ -243,14 +276,20 @@
 			text-shadow: 2px 2px 1px yellow;
 		}
 	</style>
-	<div>
 		<!-- <video id="welcomeVideo" autoplay loop muted>
 			<source src="media/welcome.mp4" type="video/mp4">
 			Your browser does not support the video tag.
 		</video> -->
-	</div>
 	<div class="landing">
-		<section></section>
+		<section>
+			<div class="text">
+				<h2>
+					<div>"FIND A JOB YOU <strong>LOVE</strong>, AND YOU WILL NEVER</div>
+					<div>HAVE TO WORK A DAY IN YOUR <strong>LIFE</strong>"</div>
+				</h2>
+				<h3>Hecmocer <span class="separation">|</span> Web Developer <span class="separation">|</span> Mathematician</h3>
+			</div>
+		</section>
 	</div>
 	<div class="experience">
 		<div class="sticky">Experiences / Education</div>
