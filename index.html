@@ -19,7 +19,7 @@
 	</style>
 	
 	<title>Hecmocer | Web Developer</title>
-	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
 	<meta charset="UTF-8">
 	<meta name="description" content="Hecmocer personal site">
 	<meta name="keywords" content="Hecmocer, Hector, Moreno, Hector Moreno, Portfolio, Developer, Web, Application, Frontend, Hire">
@@ -42,7 +42,7 @@
 			/* height: 78%; */
 			width: 100%;
 			border-bottom: solid 1px black;
-			background-image: url('./media/landing.jpg');
+			background-color: #dd2b3b;
 			background-position: 45% 50%;
 			background-repeat: no-repeat;
 			background-size: cover;
@@ -151,7 +151,6 @@
 		}
 		.experience .upm {
 			background-color: #bbc4d5;
-			background-image: url('media/upm.jpeg');
 			background-position: 55% 0%;
 		}
 		.experience .jll h3 {
@@ -429,12 +428,14 @@
 	<script>
 		document.body.onload = function() {
 			this.loadFont('https://fonts.googleapis.com/css?family=Montserrat');
-			this.asyncLoadImage('section.jll', 'media/jll XS.png', 'media/jll XL.png');
-			this.asyncLoadImage('section.wombat', 'media/wombat XS.png', 'media/wombat XL.jpeg');
-			this.asyncLoadImage('section.composer', 'media/composer XS.png', 'media/composer XL.jpeg');
-			this.asyncLoadImage('section.shap', 'media/shap XS.png', 'media/shap XL.jpg');
-			this.asyncLoadImage('section.babel', 'media/babel XS.png', 'media/babel XL.jpg');
-			this.asyncLoadImage('section.erasmus', 'media/erasmus XS.png', 'media/erasmus XL.png');
+			this.asyncLoadImage('.landing section', 'media/landingXS.jpg', 'media/landingXL.jpg');
+			this.asyncLoadImage('.experience .jll', 'media/jllXS.jpg', 'media/jllXL.jpg');
+			this.asyncLoadImage('.experience .wombat', 'media/wombatXS.jpg', 'media/wombatXL.jpg');
+			this.asyncLoadImage('.experience .composer', 'media/composerXS.jpg', 'media/composerXL.jpg');
+			this.asyncLoadImage('.experience .shap', 'media/shapXS.jpg', 'media/shapXL.jpg');
+			this.asyncLoadImage('.experience .babel', 'media/babelXS.jpg', 'media/babelXL.jpg');
+			this.asyncLoadImage('.experience .erasmus', 'media/rucXS.jpg', 'media/rucXL.jpg');
+			this.asyncLoadImage('.experience .upm', 'media/upmXS.jpg', 'media/upmXL.jpg');
 		}
 
 		function loadFont(url) {
