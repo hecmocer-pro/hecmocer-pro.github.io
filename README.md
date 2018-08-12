@@ -19,9 +19,9 @@
 - [X] Defer non critical CSS
 - [X] Optimize image compression
 - [X] A11y
-- [ ] Minify JS
-- [ ] Minify CSS
-- [ ] Add lighthouse audit score
-- [ ] Responsive
+- [X] Responsive
+- [X] Minify JS
+- [X] Minify CSS
+- [X] Lighthouse audit score
 - [ ] Web analytics
 - [ ] "About me" video
