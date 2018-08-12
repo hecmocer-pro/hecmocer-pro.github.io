@@ -16,6 +16,12 @@
 ## :rocket: Features
 - [x] Updated timeline
 - [x] Optimized first paint
+- [X] Defer non critical CSS
+- [X] Optimize image compression
+- [X] A11y
+- [ ] Minify JS
+- [ ] Minify CSS
+- [ ] Add lighthouse audit score
 - [ ] Responsive
 - [ ] Web analytics
 - [ ] "About me" video
