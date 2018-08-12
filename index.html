@@ -260,31 +260,33 @@
 		}
 
 		function loadJPGimages() {
-			this.asyncLoadImage('.landing section', 'media/landingXS.jpg', 'media/landingXL.jpg');
-			this.asyncLoadImage('.experience .jll', 'media/jllXS.jpg', 'media/jllXL.jpg');
-			this.asyncLoadImage('.experience .wombat', 'media/wombatXS.jpg', 'media/wombatXL.jpg');
-			this.asyncLoadImage('.experience .composer', 'media/composerXS.jpg', 'media/composerXL.jpg');
-			this.asyncLoadImage('.experience .shap', 'media/shapXS.jpg', 'media/shapXL.jpg');
-			this.asyncLoadImage('.experience .babel', 'media/babelXS.jpg', 'media/babelXL.jpg');
-			this.asyncLoadImage('.experience .erasmus', 'media/rucXS.jpg', 'media/rucXL.jpg');
-			this.asyncLoadImage('.experience .upm', 'media/upmXS.jpg', 'media/upmXL.jpg');	
+			this.asyncLoadImage('.landing section', 'landing', 'jpg');
+			this.asyncLoadImage('.experience .jll', 'jll', 'jpg');
+			this.asyncLoadImage('.experience .wombat', 'wombat', 'jpg');
+			this.asyncLoadImage('.experience .composer', 'composer', 'jpg');
+			this.asyncLoadImage('.experience .shap', 'shap', 'jpg');
+			this.asyncLoadImage('.experience .babel', 'babel', 'jpg');
+			this.asyncLoadImage('.experience .erasmus', 'ruc', 'jpg');
+			this.asyncLoadImage('.experience .upm', 'upm', 'jpg');	
 		}
 
 		function loadWEBPimages() {
-			this.asyncLoadImage('.landing section', 'media/landingXS.webp', 'media/landingXL.webp');
-			this.asyncLoadImage('.experience .jll', 'media/jllXS.webp', 'media/jllXL.webp');
-			this.asyncLoadImage('.experience .wombat', 'media/wombatXS.webp', 'media/wombatXL.webp');
-			this.asyncLoadImage('.experience .composer', 'media/composerXS.webp', 'media/composerXL.webp');
-			this.asyncLoadImage('.experience .shap', 'media/shapXS.webp', 'media/shapXL.webp');
-			this.asyncLoadImage('.experience .babel', 'media/babelXS.webp', 'media/babelXL.webp');
-			this.asyncLoadImage('.experience .erasmus', 'media/rucXS.webp', 'media/rucXL.webp');
-			this.asyncLoadImage('.experience .upm', 'media/upmXS.webp', 'media/upmXL.webp');
+			this.asyncLoadImage('.landing section', 'landing', 'webp');
+			this.asyncLoadImage('.experience .jll', 'jll', 'webp');
+			this.asyncLoadImage('.experience .wombat', 'wombat', 'webp');
+			this.asyncLoadImage('.experience .composer', 'composer', 'webp');
+			this.asyncLoadImage('.experience .shap', 'shap', 'webp');
+			this.asyncLoadImage('.experience .babel', 'babel', 'webp');
+			this.asyncLoadImage('.experience .erasmus', 'ruc', 'webp');
+			this.asyncLoadImage('.experience .upm', 'upm', 'webp');
 		}
 
-		function asyncLoadImage(containerSelector, lowResUrl, hiResUrl) {
+		function asyncLoadImage(containerSelector, imageUrl, format) {
 			const container = document.querySelector(containerSelector);
 			const lowRes = new Image();
 			const hiRes = new Image();
+			const lowResUrl = `media/${imageUrl}XS.${format}`;
+			const hiResUrl = `media/${imageUrl}XL.${format}`;
 			lowRes.onload = function(){
 				container.style.backgroundImage = 'url(' + lowRes.src + ')';
 				hiRes.src = hiResUrl;
