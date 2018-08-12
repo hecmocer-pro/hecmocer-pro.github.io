@@ -24,7 +24,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="theme-color" content="#EEEEEE"/>
 	<meta name="application-name" content="Hecmocer">
-	<meta name="application" content="Hecmocer">
 	<meta name="description" content="Hecmocer personal site">
 	<meta name="keywords" content="Hecmocer, Hector, Moreno, Hector Moreno, Portfolio, Developer, Web, Application, Frontend, Hire">
 	<meta name="author" content="Hecmocer">
@@ -42,7 +41,6 @@
 		}
 		.landing section {
 			height: 100%;
-			/* height: 78%; */
 			width: 100%;
 			border-bottom: solid 1px black;
 			background-color: #dd2b3b;
@@ -184,7 +182,7 @@
 			top: 18vh;
 			height: 65vh;
 		}
-		.section-content::before{
+		.experience .section-content::before{
 			content: '';
 			background-color: rgba(255,255,255,1);
 			opacity: 0.7;
@@ -195,7 +193,7 @@
 			top: 0;
 			left: 0;
 		}
-		section:first-of-type .section-content::before{
+		.experience section:first-of-type .section-content::before{
 			border-radius: 0 40px 0 0;
 		}
 		.experience h2::before {
@@ -224,17 +222,6 @@
 		.experience h5 {
 			font-size: 16px;
 			margin: 0;
-		}
-		@media (max-width: 500px) {
-			.experience .section-content {
-				left: 50px;
-			}
-			.experience section::before {
-				left: 20px;
-			}
-			.experience h2::before {
-				left: -41px;
-			}
 		}
 
 		/* MORE */
@@ -272,13 +259,65 @@
 		.more .custom-bullet-list svg {
 			padding-right: 10px;
 		}
+		.more .reach-me {
+			text-shadow: 2px 2px 1px yellow;
+		}
 		@media (max-width: 500px) {
+			.mediaHidden {
+				display: none;
+			}
+			.landing .text {
+				margin: 0;
+				display: flex;
+				flex-direction: column-reverse;
+				justify-content: space-between;
+				height: 100%;
+			}
+			.landing h2 {
+				font-size: 12px;
+			}
+			.landing h3 {
+				background-color: rgba(0,0,0,0.4);
+    		padding: 5px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+			.landing strong {
+				font-size: 20px;
+			}
+			.landing .landing-item {
+				display: block;
+			}
+			.experience .section-content {
+				left: 50px;
+			}
+			.experience section::before {
+				left: 20px;
+			}
+			.experience h2::before {
+				left: -41px;
+			}
 			.more section {
 				padding-left: 20px;
 			}
-		}
-		.more .reach-me {
-			text-shadow: 2px 2px 1px yellow;
+			.experience .section-content {
+				width: 80%;
+				padding: 10vh 0 16vh 0;
+			}
+			.experience section:first-of-type .section-content {
+				padding-left: 0;
+				padding-right: 0;
+				width: 80%;
+			}
+			.experience .section-content::before {
+				left: -30px;
+				width: 90%;
+			}
+			.experience h4 {
+				width: 70%;
+				margin-right: 0;
+			}
 		}
 	</style>
 	<div class="landing">
@@ -288,7 +327,7 @@
 					<div>"FIND A JOB YOU <strong>LOVE</strong>, AND YOU WILL NEVER</div>
 					<div>HAVE TO WORK A DAY IN YOUR <strong>LIFE</strong>"</div>
 				</h2>
-				<h3>Hecmocer <span class="separation">|</span> Web Developer <span class="separation">|</span> Mathematician</h3>
+				<h3><span class="landing-item">Hecmocer</span> <span class="separation mediaHidden">|</span> <span class="landing-item">Web Developer</span> <span class="separation mediaHidden">|</span> <span class="landing-item">Mathematician</span></h3>
 			</div>
 		</section>
 	</div>
@@ -349,7 +388,7 @@
 				<h3>2012 − 09</h3>
 				<h2>UPM</h2>
 				<h5>Student</h5>
-				<h4>Started studying Computer Science & Mathematics degree at UPM, Spain. Created a windows application for graph viewing and algorithmic triangulation using C#</h4>
+				<h4>Studied Computer Science & Mathematics degree at UPM, Spain. Created a windows application for graph visualization and triangulation using C#</h4>
 			</div>
 		</section>
 	</div>
@@ -358,8 +397,8 @@
 			<h2>🎤 Talks & featured in</h2>
 			<ul>
 				<li>JSDay2018 — Soon</li>
-				<li><a href="https://twitter.com/BABELgrupo/status/948948403861573633">Web Components Geeky Pills</a></li>
-				<li><a href="https://twitter.com/BABELgrupo/status/948948403861573633">Web Components Geeky Pills - teaser</a></li>
+				<li><a href="https://twitter.com/BABELgrupo/status/948948403861573633">Geeky Pills</a></li>
+				<li><a href="https://twitter.com/BABELgrupo/status/948948403861573633">Geeky Pills - teaser</a></li>
 				<li><a href="https://www.youtube.com/watch?v=Kf887zEKMsA">Polymer 2.0 from square one</a></li>
 				<li><a href="https://www.youtube.com/watch?v=eqfqdG6ux00">Polymer 2.0 from square one - summary</a></li>
 				<li><a href="https://www.youtube.com/watch?v=V4sr31M7T2U">Babelcamp 2017</a></li>
@@ -368,26 +407,26 @@
 		<section>
 			<h2>💻 Side projects</h2>
 			<ul>
-				<li>Launchpad project (WIP) — Node & web client</li>
-				<li>Personal website v2.0 — Native Web Components</li>
-				<li>Personal website — Web Components & Polymer 1.x</li>
-				<li>VR videogame — A-Frame</li>
-				<li>Web backend — NodeJS & MongoDB</li>
-				<li>Online music player — HTML5, CSS3, JS</li>
-				<li>Full-stack StackOverflow clone — C# & Jquery</li>
-				<li>Checkers Artificial Inteligence — C++ (console application)</li>
+				<li>Launchpad project (WIP)<span class="mediaHidden"> — Node & web client</span></li>
+				<li>Personal website v2.0<span class="mediaHidden"> — Native Web Components</span></li>
+				<li>Personal website<span class="mediaHidden"> — Web Components & Polymer 1.x</span></li>
+				<li>VR videogame<span class="mediaHidden"> — A-Frame</span></li>
+				<li>Web backend<span class="mediaHidden"> — NodeJS & MongoDB</span></li>
+				<li>Online music player<span class="mediaHidden"> — HTML5, CSS3, JS</span></li>
+				<li>Full-stack StackOverflow clone<span class="mediaHidden"> — C# & Jquery</span></li>
+				<li>Checkers Artificial Inteligence<span class="mediaHidden"> — C++ (console application)</span></li>
 			</ul>
 		</section>
 		<section>
 			<h2>📚 References</h2>
 			<ul>
-				<li>JLL — <a href="https://images.pexels.com/photos/2166/flight-sky-earth-space.jpg">flight-sky-earth-space</a></li>
-				<li>Wombat — <a href="https://images.pexels.com/photos/390051/surfer-wave-sunset-the-indian-ocean-390051.jpeg">surfer-wave-sunset-the-indian-ocean</a></li>
-				<li>Composer — <a href="https://images.pexels.com/photos/101667/pexels-photo-101667.jpeg">pexels-photo-101667</a></li>
-				<li>ShoppingApp — <a href="https://images.pexels.com/photos/35550/ipad-tablet-technology-touch.jpg">ipad-tablet-technology-touch</a></li>
-				<li>Babel — <a href="https://images.pexels.com/photos/6542/landscape-animal-mountain-top.jpg">landscape-animal-mountain-top</a></li>
-				<li>Erasmus — <a href="https://static.pexels.com/photos/237353/pexels-photo-237353.jpeg">pexels-photo-237353</a></li>
-				<li>UPM — <a href="https://images.pexels.com/photos/136133/pexels-photo-136133.jpeg">pexels-photo-136133</a></li>
+				<li>JLL — <a href="https://images.pexels.com/photos/2166/flight-sky-earth-space.jpg">Pexels</a></li>
+				<li>Wombat — <a href="https://images.pexels.com/photos/390051/surfer-wave-sunset-the-indian-ocean-390051.jpeg">Pexels</a></li>
+				<li>Composer — <a href="https://images.pexels.com/photos/101667/pexels-photo-101667.jpeg">Pexels</a></li>
+				<li>ShoppingApp — <a href="https://images.pexels.com/photos/35550/ipad-tablet-technology-touch.jpg">Pexels</a></li>
+				<li>Babel — <a href="https://images.pexels.com/photos/6542/landscape-animal-mountain-top.jpg">Pexels</a></li>
+				<li>Erasmus — <a href="https://static.pexels.com/photos/237353/pexels-photo-237353.jpeg">Pexels</a></li>
+				<li>UPM — <a href="https://images.pexels.com/photos/136133/pexels-photo-136133.jpeg">Pexels</a></li>
 				<li>Reduced image size thanks to <a href="https://compress-or-die.com/png-process">compress-or-die</a></li></li>
 			</ul>
 		</section>
