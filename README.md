@@ -2,6 +2,15 @@
 
 ## :memo: Changelog
 
+### 1.1.0 - August 2018
+  - Responsive
+  - Minified JS
+  - Minified CSS
+  - A11y
+  - SEO
+  - Recompressed images for the webp format
+  - Added lighthouse report
+
 ### 1.0.0 - August 2018
   - Update timeline
   - Optimized first paint
@@ -14,14 +23,17 @@
     - Contact
 
 ## :rocket: Features
-- [x] Updated timeline
 - [x] Optimized first paint
-- [X] Defer non critical CSS
-- [X] Optimize image compression
-- [X] A11y
+- [X] Optimized image compression
 - [X] Responsive
 - [X] Minify JS
 - [X] Minify CSS
-- [X] Lighthouse audit score
+- [X] A11y
+- [X] SEO
 - [ ] Web analytics
-- [ ] "About me" video
+
+---
+
+## Lighthouse report
+
+![Lighthouse report](media/lighthouseReport.png)
