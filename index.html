@@ -262,9 +262,20 @@
 		.more .reach-me {
 			text-shadow: 2px 2px 1px yellow;
 		}
-		@media (max-width: 500px) {
+		@media (max-width: 400px) {
+			.landing h2 {
+				font-size: 12px;
+			}
+			.landing strong {
+				font-size: 20px;
+			}
+		}
+		@media (max-width: 800px) {
 			.mediaHidden {
 				display: none;
+			}
+			.thisIsABadPractice {
+				width: 250px;
 			}
 			.landing .text {
 				margin: 0;
@@ -273,18 +284,12 @@
 				justify-content: space-between;
 				height: 100%;
 			}
-			.landing h2 {
-				font-size: 12px;
-			}
 			.landing h3 {
 				background-color: rgba(0,0,0,0.4);
     		padding: 5px;
 				display: flex;
 				flex-direction: column;
 				align-items: center;
-			}
-			.landing strong {
-				font-size: 20px;
 			}
 			.landing .landing-item {
 				display: block;
@@ -427,7 +432,7 @@
 				<li>Babel — <a href="https://images.pexels.com/photos/6542/landscape-animal-mountain-top.jpg">Pexels</a></li>
 				<li>Erasmus — <a href="https://static.pexels.com/photos/237353/pexels-photo-237353.jpeg">Pexels</a></li>
 				<li>UPM — <a href="https://images.pexels.com/photos/136133/pexels-photo-136133.jpeg">Pexels</a></li>
-				<li>Reduced image size thanks to <a href="https://compress-or-die.com/png-process">compress-or-die</a></li></li>
+				<li class="thisIsABadPractice">Reduced image size thanks to <a href="https://compress-or-die.com/png-process">compress-or-die</a></li></li>
 			</ul>
 		</section>
 		<section>
