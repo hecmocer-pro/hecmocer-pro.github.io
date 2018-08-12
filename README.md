@@ -36,4 +36,4 @@
 
 ## Lighthouse report
 
-![Lighthouse report](media/lighthouseReport.png)
+![Lighthouse report](https://raw.githubusercontent.com/hecmocer-pro/hecmocer-pro.github.com/master/media/LighthouseReport.png)
