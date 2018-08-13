@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   font-family: 'verdana', sans-serif;
@@ -251,6 +252,15 @@ h2 {
   .landing strong {
     font-size: 20px;
   }
+  .experience h2 {
+    font-size: 1.25em;
+  }
+  .experience h4 {
+    font-size: 14px;
+  }
+  .experience h5 {
+    font-size: 16px;
+  }
 }
 @media (max-width: 800px) {
   .mediaHidden {
@@ -283,7 +293,7 @@ h2 {
     left: 20px;
   }
   .experience h2::before {
-    left: -41px;
+    left: -42px;
   }
   .more section {
     padding-left: 20px;
