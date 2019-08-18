@@ -2,6 +2,14 @@
 
 ## :memo: Changelog
 
+### 1.2.0 - August 2019
+  - Added new projects (pokemon brawl)
+  - Removed old and irrelevant projects (SOVA, checkers, ...)
+  - Added new talks & featured in (codemotion, carto discovery, geeky pills)
+  - Added new section: Certifications
+  - Adjusted styles for bulleted sections, now they are more consistent and easy to read
+  - Added Google Analytics
+
 ### 1.1.0 - August 2018
   - Responsive
   - Minified JS
@@ -30,7 +38,7 @@
 - [X] Minify CSS
 - [X] A11y
 - [X] SEO
-- [ ] Web analytics
+- [X] Web analytics
 
 ---
 
