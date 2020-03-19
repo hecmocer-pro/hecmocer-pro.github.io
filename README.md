@@ -2,6 +2,9 @@
 
 ## :memo: Changelog
 
+### 1.3.0 - March 2020
+  - Added custom domain name hecmocer.es 🎉
+
 ### 1.2.0 - August 2019
   - Added new projects (pokemon brawl)
   - Removed old and irrelevant projects (SOVA, checkers, ...)
