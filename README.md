@@ -2,6 +2,12 @@
 
 ## :memo: Changelog
 
+### 1.4.0 - May 2020
+  - Added device frame for large width displays
+  - Altered fonts and reduced content to increase readability
+  - Moved credits section from page body to commented source code
+  - Added Google certification 💪
+
 ### 1.3.0 - March 2020
   - Added custom domain name hecmocer.es 🎉
 
