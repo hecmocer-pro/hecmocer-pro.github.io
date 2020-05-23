@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: 'verdana', sans-serif;
@@ -14,6 +18,10 @@ h2 {
     padding: 0;
 }
 
+ul {
+    line-height: 1.5;
+}
+
 .pageContainer {
     background-color: white;
     box-shadow: 0 32px 200px -70px rgba(0, 0, 0, 0.50);
@@ -23,10 +31,12 @@ h2 {
     /* width: calc(100vw - 80px - 80px); */
     height: calc(100vh - 2 * 8 * min(1vh, 1vw));
     /* height: calc(100vh - 80px - 80px); */
-    transform: translate(calc(8 * min(1vh, 1vw)), calc(8 * min(1vh, 1vw)));
+    transform: translate(calc(8 * min(1vh, 1vw)), calc(8 * min(1vh, 1vw))) scale(0.8);
     /* left: 80px; top: 80px; */
     border-radius: calc(min(1vh, 1vw) * 8);
     /* border-radius: 80px; */
+
+    /* transform: translate(calc(8 * min(1vh, 1vw)), calc(8 * min(1vh, 1vw))) scale(0.5) rotate(0.05turn); */
 }
 
 .pageContainer-inside {
@@ -43,6 +53,25 @@ h2 {
     /* border-radius: 50px; */
 }
 
+.landing-frontdrop {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-80deg, #C9D0FF 22%, #CCD2FF 48%, #CCD2FF 99%);
+    position: absolute;
+    z-index: 10;
+    pointer-events: none;   
+}
+
+.pageContainer.loaded .landing-frontdrop {
+    animation: exit-backdrop 700ms 500ms ease-in forwards;
+}
+
+@keyframes exit-backdrop {
+    0%   { transform: translate(0,0); opacity: 1; }
+    33%  { opacity: 1; }
+    100% { transform: translate(0,0); opacity: 0; }
+}
+
 .pageContainer-body {
     overflow: auto;
     height: inherit;
@@ -50,7 +79,6 @@ h2 {
 
 /* LANDING */
 .landing {
-    /* background-color: #eee; */
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -79,9 +107,6 @@ h2 {
     border-radius: 2px;
     letter-spacing: -1px;
     line-height: 1.5;
-    position: sticky;
-    top: 5%;
-    margin: 16px 16px;
 }
 
 .landing strong {
@@ -101,6 +126,10 @@ h2 {
     margin: 0 auto 0 55%;
     position: sticky;
     top: 5%;
+}
+
+.landing .text>* {
+    margin: 16px;
 }
 
 .landing .separation {
@@ -150,8 +179,8 @@ h2 {
 }
 
 .experience section:first-of-type::before {
-    top: 18%;
-    height: 82%;
+    top: 10%;
+    height: 90%;
 }
 
 .experience .jll {
@@ -209,7 +238,7 @@ h2 {
     position: relative;
     left: 100px;
     padding: 14vh 20px 0 50px;
-    height: calc(100% - 14vh);
+    height: 100%;
     z-index: 0;
     width: 320px;
     line-height: 1.7;
@@ -220,8 +249,8 @@ h2 {
 
 .experience section:first-of-type .section-content {
     padding: 7vh 20px 0 50px;
-    top: 18%;
-    height: 72%;
+    top: 10%;
+    height: 90%;
 }
 
 .experience .section-content::before {
@@ -302,18 +331,26 @@ h2 {
     word-spacing: 3px;
 }
 
-.more .custom-bullet-list {
+.more .reach-me-bullet-list {
     padding-left: 15px;
     list-style-type: none;
 }
 
-.more .custom-bullet-list li {
+.more .reach-me-bullet-list li {
     display: flex;
     align-items: flex-end;
 }
 
-.more .custom-bullet-list svg {
+.more .reach-me-bullet-list svg {
     padding-right: 10px;
+}
+
+.more .reach-me-bullet-list a {
+    text-decoration: none;
+}
+
+.more .reach-me-bullet-list span {
+    text-decoration: underline;
 }
 
 .more .reach-me {
@@ -327,6 +364,7 @@ h2 {
 
     .landing h2 {
         font-size: 12px;
+        letter-spacing: -0.2px;
     }
 
     .landing strong {
@@ -356,10 +394,6 @@ h2 {
         display: none;
     }
 
-    .thisIsABadPractice {
-        width: 250px;
-    }
-
     .landing .text {
         margin: 0;
         display: flex;
@@ -384,7 +418,7 @@ h2 {
         left: 50px;
         width: 80%;
         padding: 2vh 0 0 0;
-        height: calc(100% - 2vh);
+        height: 100%;
     }
 
     .experience section::before {
@@ -405,12 +439,12 @@ h2 {
         width: 80%;
         padding-top: 0;
         top: 7%;
-        height: calc(100% - 7%);
+        height: 93%;
     }
-    
+
     .experience section:first-of-type::before {
         top: 7%;
-        height: calc(100% - 7%);
+        height: 93%;
     }
 
     .experience .section-content::before {
@@ -451,15 +485,45 @@ h2 {
     .experience section:first-of-type .section-content {
         padding-top: 0;
         top: 12%;
-        height: calc(100% - 12%);
+        height: 88%;
     }
-    
+
     .experience section:first-of-type::before {
         top: 12%;
-        height: calc(100% - 12%);
+        height: 88%;
     }
 
     .hiddenUpTo1440 {
         display: none;
+    }
+}
+
+@media (min-width: 1440px) {
+    .pageContainer.loaded {
+        animation: device-entry 700ms 500ms forwards;
+    }
+
+    .pageContainer.reachedBottom {
+        animation: device-entry 700ms 500ms forwards, reached-bottom 300ms linear;
+    }
+
+    @keyframes device-entry {
+        0%   { transform: translate(calc(8 * min(1vh, 1vw)), calc(8 * min(1vh, 1vw))) scale(0.8); }
+        100% { transform: translate(calc(8 * min(1vh, 1vw)), calc(8 * min(1vh, 1vw))) scale(1); }
+    }
+
+    /* from https://www.w3schools.com/howto/howto_css_shake_image.asp */
+    @keyframes reached-bottom {
+        0%   { transform: translate(calc(8 * min(1vh, 1vw) + 1px), calc(8 * min(1vh, 1vw) + 1px)) scale(1) rotate(0deg); }
+        10%  { transform: translate(calc(8 * min(1vh, 1vw) + -1px), calc(8 * min(1vh, 1vw) + -2px)) scale(1) rotate(-1deg); }
+        20%  { transform: translate(calc(8 * min(1vh, 1vw) + -3px), calc(8 * min(1vh, 1vw) + 0px)) scale(1) rotate(1deg); }
+        30%  { transform: translate(calc(8 * min(1vh, 1vw) + 3px), calc(8 * min(1vh, 1vw) + 2px)) scale(1) rotate(0deg); }
+        40%  { transform: translate(calc(8 * min(1vh, 1vw) + 1px), calc(8 * min(1vh, 1vw) + -1px)) scale(1) rotate(1deg); }
+        50%  { transform: translate(calc(8 * min(1vh, 1vw) + -1px), calc(8 * min(1vh, 1vw) + 2px)) scale(1) rotate(-1deg); }
+        60%  { transform: translate(calc(8 * min(1vh, 1vw) + -3px), calc(8 * min(1vh, 1vw) + 1px)) scale(1) rotate(0deg); }
+        70%  { transform: translate(calc(8 * min(1vh, 1vw) + 3px), calc(8 * min(1vh, 1vw) + 1px)) scale(1) rotate(-1deg); }
+        80%  { transform: translate(calc(8 * min(1vh, 1vw) + -1px), calc(8 * min(1vh, 1vw) + -1px)) scale(1) rotate(1deg); }
+        90%  { transform: translate(calc(8 * min(1vh, 1vw) + 1px), calc(8 * min(1vh, 1vw) + 2px)) scale(1) rotate(0deg); }
+        100% { transform: translate(calc(8 * min(1vh, 1vw) + 1px), calc(8 * min(1vh, 1vw) + -2px)) scale(1) rotate(-1deg); }
     }
 }
