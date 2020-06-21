@@ -37,7 +37,6 @@ function loadedLandingImage() {
 function shakePage() {
     const pageContainer = document.querySelector('#pageContainer')
     pageContainer.classList.add('reachedBottom')
-    window.navigator.vibrate(200)
     setTimeout(() => {
         pageContainer.classList.remove('reachedBottom')
     }, 300)
