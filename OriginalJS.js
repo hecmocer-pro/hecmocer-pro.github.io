@@ -13,7 +13,6 @@ var isChrome;
 document.body.onload = function () {
     this.loadFont('https://fonts.googleapis.com/css?family=Montserrat');
     (isChrome || isOpera) ? loadWEBPimages() : loadJPGimages();
-    window.navigator.vibrate(10)
 }
 
 function loadFont(url) {
