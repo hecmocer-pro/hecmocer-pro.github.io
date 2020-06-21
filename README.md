@@ -2,6 +2,11 @@
 
 ## :memo: Changelog
 
+### 1.5.0 - June 2020
+  - Removed a text section was not being displayed correctly on small devices
+  - Added Google certification link
+  - Added device vibration when reached bottom
+
 ### 1.4.0 - May 2020
   - Added device frame for large width displays
   - Altered fonts and reduced content to increase readability

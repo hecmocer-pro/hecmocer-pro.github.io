@@ -13,6 +13,7 @@ var isChrome;
 document.body.onload = function () {
     this.loadFont('https://fonts.googleapis.com/css?family=Montserrat');
     (isChrome || isOpera) ? loadWEBPimages() : loadJPGimages();
+    window.navigator.vibrate(10)
 }
 
 function loadFont(url) {
@@ -36,6 +37,7 @@ function loadedLandingImage() {
 function shakePage() {
     const pageContainer = document.querySelector('#pageContainer')
     pageContainer.classList.add('reachedBottom')
+    window.navigator.vibrate(200)
     setTimeout(() => {
         pageContainer.classList.remove('reachedBottom')
     }, 300)
