@@ -2,6 +2,9 @@
 
 ## :memo: Changelog
 
+### 1.6.0 - August 2020
+  - Added 404 page
+
 ### 1.5.0 - June 2020
   - Removed a text section was not being displayed correctly on small devices
   - Added Google certification link
