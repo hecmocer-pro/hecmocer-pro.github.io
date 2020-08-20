@@ -1,1 +1,104 @@
-Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque quos nisi laudantium eum quidem enim repellat officiis est totam ipsum pariatur a soluta porro eveniet facere quis, debitis facilis accusamus!
+<title>Hecmocer | Web Developer</title>
+    <link rel="shortcut icon" href="./media/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#EEEEEE" />
+    <meta name="application-name" content="Hecmocer">
+    <meta name="description"
+        content="Feel free to jump in and discover Hecmocer. This site has been custom made with love, to hold contact information and more">
+    <meta name="keywords"
+        content="Hecmocer, Hector, Moreno, Hector Moreno, Portfolio, Developer, Web, Application, Frontend, Hire">
+    <meta name="author" content="Hecmocer">
+    <meta name="google-site-verification" content="MXokGjXPh67diSRdT3KrfWTzJhz1sHTaQG9FY-n8pV8" />
+    <style>
+        /* ADD STYLE HERE */
+        body {
+            height: 100vh;
+            width: 100vw;
+            margin: 0;
+            background: linear-gradient(180deg, rgba(255,255,255,1) 40%, rgba(200,200,200,0.2) 100%);
+        }
+        .container {
+            display: flex;
+            padding: 20vh 10vw;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            opacity: 0;
+        }
+        .container.fonts-ready {
+            animation: fadeIn 1s forwards;
+        }
+        .mainText {
+            font-family: 'Raleway', sans-serif;
+            font-size: 48px;
+            color: #333;
+            margin: 0;
+        }
+        .subText {
+            font-family: 'Merriweather Sans', sans-serif;
+            font-size: 20px;
+            color: #999;
+            margin: 0;
+            margin-top: 8px;
+            letter-spacing: 0.6px;
+        }
+        .descriptiveText {
+            font-family: 'Merriweather Sans', sans-serif;
+            color: #333;
+            margin: 0;
+            margin-top: 60px;
+        }
+        .descriptiveTextEnding {
+            font-family: 'Merriweather Sans', sans-serif;
+            color: #333;
+            margin: 0;
+            margin-top: 24px;
+        }
+        @keyframes fadeIn {
+            0%   { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300&family=Raleway:wght@300&display=swap" rel="stylesheet">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145912087-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-145912087-2');
+    </script>
+
+</head>
+
+
+<body>
+
+    <div class="container">
+        <h1 class="mainText">Whoops!</h1>
+        <h2 class="subText">This is awkward</h2>
+        <h3 class="descriptiveText">There is nothing to see here. But there might be in the future.</h3>
+        <h3 class="descriptiveTextEnding">Who knows...</h3>
+    </div>
+
+    <script>
+        // Display content when the fonts are ready or after an arbitrary time
+        const arbitraryPatience = 2000
+        const patienceTimeout = setTimeout(() => {
+            document.querySelector('.container').classList.add('fonts-ready')
+            console.log('loaded fonts after patience timeout')
+        }, arbitraryPatience);
+        document.fonts.ready.then(function () {
+            clearTimeout(patienceTimeout)
+            document.querySelector('.container').classList.add('fonts-ready')
+            console.log('loaded fonts before patience timeout')
+        });
+    </script>
+
+</body>
+
+</html>
