@@ -4,6 +4,12 @@
 
 ### 1.6.0 - August 2020
   - Added 404 page
+  - Refactored JS to improve readability and to replace spaghetti code for ravioli code
+  - Replaced xhr font loading for link tag
+  - Added intersectionObserver API calls, so that when the user scrolls through the sections, a small vibration is felt
+  - Added listener to onload of images and font, so that when the content is loaded, the content is displayed
+  - Removed lowResImages now that the content is displayed after the content has been loaded or a timeout has been reached
+  - Improved .webp compatibility check, so that it is now robust checking the image loading error, instead of inadecuate browser checking
 
 ### 1.5.0 - June 2020
   - Removed a text section was not being displayed correctly on small devices

@@ -16,6 +16,7 @@ h1 {
 
 h2 {
     padding: 0;
+    font-weight: 400;
 }
 
 ul {
@@ -59,7 +60,7 @@ ul {
     background: linear-gradient(-80deg, #C9D0FF 22%, #CCD2FF 48%, #CCD2FF 99%);
     position: absolute;
     z-index: 10;
-    pointer-events: none;   
+    pointer-events: none;
 }
 
 .pageContainer.loaded .landing-frontdrop {
@@ -110,7 +111,7 @@ ul {
 }
 
 .landing strong {
-    font-size: 32px;
+    font-size: 28px;
     letter-spacing: 0;
 }
 
@@ -126,9 +127,10 @@ ul {
     margin: 0 auto 0 55%;
     position: sticky;
     top: 5%;
+    word-spacing: 5px;
 }
 
-.landing .text>* {
+.landing .text > * {
     margin: 16px;
 }
 
@@ -294,6 +296,8 @@ ul {
 
 .experience h4 {
     padding-top: 10px;
+    font-weight: 400;
+    word-spacing: 3px;
 }
 
 .experience h5 {

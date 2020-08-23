@@ -86,17 +86,21 @@
     </div>
 
     <script>
+
         // Display content when the fonts are ready or after an arbitrary time
         const arbitraryPatience = 2000
         const patienceTimeout = setTimeout(() => {
-            document.querySelector('.container').classList.add('fonts-ready')
-            console.log('loaded fonts after patience timeout')
+            fontsReady()
         }, arbitraryPatience);
         document.fonts.ready.then(function () {
             clearTimeout(patienceTimeout)
-            document.querySelector('.container').classList.add('fonts-ready')
-            console.log('loaded fonts before patience timeout')
+            fontsReady()
         });
+
+        function fontsReady() {
+            document.querySelector('.container').classList.add('fonts-ready')
+        }
+
     </script>
 
 </body>

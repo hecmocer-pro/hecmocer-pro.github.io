@@ -1,91 +1,111 @@
-// Browsers with webp support
-var isOpera;
-var isChrome;
+/* Start loading functions so that when they finish loading or a timeout is reached, the loading indicator is removed */
+(function webInit() {
 
-// https://stackoverflow.com/a/9851769
-(function browserDetection() {
-    // Opera 8.0+
-    isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
-    // Chrome 1+
-    isChrome = !!window.chrome && !!window.chrome.webstore;
+    document.body.onload = function () {
+        const loadingPromises = []
+        const arbitraryPatience = 2000
+
+        loadingPromises.push(loadImages())
+        loadingPromises.push(document.fonts.ready)
+
+        const patienceTimeout = setTimeout(() => {
+            finishedLoading()
+        }, arbitraryPatience)
+
+        Promise.all(loadingPromises).then((response) => {
+            clearTimeout(patienceTimeout)
+            finishedLoading()
+        })
+    }
+
+    function loadImages() {
+        return new Promise(function (resolve, reject) {
+            const mainFormat = 'webp'
+            const fallbackFormat = 'jpg'
+            const loadedImagePromises = []
+
+            loadedImagePromises.push(asyncLoadImage('.landing section', 'landing', mainFormat, fallbackFormat))
+            loadedImagePromises.push(asyncLoadImage('.experience .jll', 'jll', mainFormat, fallbackFormat))
+            loadedImagePromises.push(asyncLoadImage('.experience .wombat', 'wombat', mainFormat, fallbackFormat))
+            loadedImagePromises.push(asyncLoadImage('.experience .composer', 'composer', mainFormat, fallbackFormat))
+            loadedImagePromises.push(asyncLoadImage('.experience .shap', 'shap', mainFormat, fallbackFormat))
+            loadedImagePromises.push(asyncLoadImage('.experience .babel', 'babel', mainFormat, fallbackFormat))
+            loadedImagePromises.push(asyncLoadImage('.experience .erasmus', 'ruc', mainFormat, fallbackFormat))
+            loadedImagePromises.push(asyncLoadImage('.experience .upm', 'upm', mainFormat, fallbackFormat))
+
+            Promise.all(loadedImagePromises).then(resolve)
+        })
+    }
+
+    function asyncLoadImage(containerSelector, srcUrl, format, fallbackFormat) {
+        return new Promise(function (resolve, reject) {
+            const container = document.querySelector(containerSelector)
+            const image = new Image()
+            const imageUrl = `media/${srcUrl}XL.${format}`
+            const imageFallbackUrl = `media/${srcUrl}XL.${fallbackFormat}`
+
+            image.onload = function () {
+                container.style.backgroundImage = 'url(' + image.src + ')'
+                resolve() // Resolve after image has loaded
+            }
+
+            /* For those browsers where the webp format is not supported */
+            image.onerror = function () {
+                image.src = imageFallbackUrl
+            }
+
+            image.src = imageUrl // Inits loading
+        })
+    }
+
+    function finishedLoading() {
+        const pageContainer = document.querySelector('#pageContainer')
+        pageContainer.classList.add('loaded')
+    }
+
 })();
 
-document.body.onload = function () {
-    this.loadFont('https://fonts.googleapis.com/css?family=Montserrat');
-    (isChrome || isOpera) ? loadWEBPimages() : loadJPGimages();
-}
+/* Listen to scroll so that when the user reaches the bottom, the page is shaken */
+(function initBodyScrollListener() {
 
-function loadFont(url) {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', url, true);
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            var style = document.createElement('style');
-            style.innerHTML = xhr.responseText;
-            document.head.appendChild(style);
+    document.querySelector('#scrollContainer').addEventListener('scroll', function (event) {
+        const element = event.target
+        if (Math.round(element.scrollHeight) - Math.round(element.scrollTop) === element.clientHeight) {
+            shakePage()
         }
-    };
-    xhr.send();
-}
-
-function loadedLandingImage() {
-    const pageContainer = document.querySelector('#pageContainer')
-    pageContainer.classList.add('loaded')
-}
-
-function shakePage() {
-    const pageContainer = document.querySelector('#pageContainer')
-    pageContainer.classList.add('reachedBottom')
-    setTimeout(() => {
-        pageContainer.classList.remove('reachedBottom')
-    }, 300)
-}
-
-
-function loadJPGimages() {
-    asyncLoadImage('.landing section', 'landing', 'jpg').then(loadedLandingImage);
-    asyncLoadImage('.experience .jll', 'jll', 'jpg');
-    asyncLoadImage('.experience .wombat', 'wombat', 'jpg');
-    asyncLoadImage('.experience .composer', 'composer', 'jpg');
-    asyncLoadImage('.experience .shap', 'shap', 'jpg');
-    asyncLoadImage('.experience .babel', 'babel', 'jpg');
-    asyncLoadImage('.experience .erasmus', 'ruc', 'jpg');
-    asyncLoadImage('.experience .upm', 'upm', 'jpg');
-}
-
-function loadWEBPimages() {
-    asyncLoadImage('.landing section', 'landing', 'webp').then(loadedLandingImage);
-    asyncLoadImage('.experience .jll', 'jll', 'webp');
-    asyncLoadImage('.experience .wombat', 'wombat', 'webp');
-    asyncLoadImage('.experience .composer', 'composer', 'webp');
-    asyncLoadImage('.experience .shap', 'shap', 'webp');
-    asyncLoadImage('.experience .babel', 'babel', 'webp');
-    asyncLoadImage('.experience .erasmus', 'ruc', 'webp');
-    asyncLoadImage('.experience .upm', 'upm', 'webp');
-}
-
-function asyncLoadImage(containerSelector, imageUrl, format) {
-    return new Promise(function (resolve, reject) {
-        const container = document.querySelector(containerSelector);
-        const lowRes = new Image();
-        const hiRes = new Image();
-        const lowResUrl = `media/${imageUrl}XS.${format}`;
-        const hiResUrl = `media/${imageUrl}XL.${format}`;
-        lowRes.onload = function () {
-            container.style.backgroundImage = 'url(' + lowRes.src + ')';
-            hiRes.src = hiResUrl;
-        };
-        hiRes.onload = function () {
-            container.style.backgroundImage = 'url(' + hiRes.src + ')';
-            resolve()
-        }
-        lowRes.src = lowResUrl;
     })
-}
 
-document.querySelector('#scrollContainer').addEventListener('scroll', function (event) {
-    const element = event.target;
-    if (element.scrollHeight - element.scrollTop === element.clientHeight) {
-        shakePage()
+    function shakePage() {
+        window.navigator.vibrate && window.navigator.vibrate(100) // For those browser that don't support vibrate
+        const pageContainer = document.querySelector('#pageContainer')
+        pageContainer.classList.add('reachedBottom')
+        setTimeout(() => {
+            pageContainer.classList.remove('reachedBottom')
+        }, 300)
     }
-});
+
+})();
+
+/* Add an intersectionObserver so that when the user scrolls over a new section, a small vibration is activated  */
+(function initSectionScrollObserver() {
+
+    let options = {
+        root: document.querySelector('#scrollArea'),
+        rootMargin: '0px',
+        threshold: 1.0
+    }
+
+    const callback = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                window.navigator.vibrate && window.navigator.vibrate(10) // For those browser that don't support vibrate
+            }
+        })
+    }
+
+    const observer = new IntersectionObserver(callback, options)
+    const targets = [...document.querySelectorAll('.experience section')]
+    targets.push(document.querySelector('.landing'))
+    targets.forEach((target) => { observer.observe(target) })
+
+})();
