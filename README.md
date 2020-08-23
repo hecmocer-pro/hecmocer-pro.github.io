@@ -8,6 +8,7 @@
   - Added listener to onload of images and font, so that when the content is loaded, the content is displayed
   - Removed lowResImages now that the content is displayed after the content has been loaded or a timeout has been reached
   - Improved .webp compatibility check, so that it is now robust checking the image loading error, instead of inadecuate browser checking
+  - Updated lighthouse report
 
 ### 1.5.0 - June 2020
   - Removed a text section was not being displayed correctly on small devices
