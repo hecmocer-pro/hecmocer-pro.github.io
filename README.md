@@ -1,11 +1,9 @@
-# Hecmocer
-
 ## :memo: Changelog
 
 ### 1.6.0 - August 2020
   - Added 404 page
-  - Refactored JS to improve readability and to replace spaghetti code for ravioli code
-  - Replaced xhr font loading for link tag
+  - Refactored JS to improve readability and to replace spaghetti code by ravioli code
+  - Replaced xhr font loading by link tag
   - Added intersectionObserver API calls, so that when the user scrolls through the sections, a small vibration is felt
   - Added listener to onload of images and font, so that when the content is loaded, the content is displayed
   - Removed lowResImages now that the content is displayed after the content has been loaded or a timeout has been reached
@@ -31,6 +29,8 @@
   - Added new section: Certifications
   - Adjusted styles for bulleted sections, now they are more consistent and easy to read
   - Added Google Analytics
+  - Improved responsiveness on weird aspect ratios
+  - updated lighthouse report
 
 ### 1.1.0 - August 2018
   - Responsive
@@ -64,6 +64,12 @@
 
 ---
 
-## Lighthouse report
+## Lighthouse report — 2020
 
-![Lighthouse report](https://raw.githubusercontent.com/hecmocer-pro/hecmocer-pro.github.com/master/media/LighthouseReport.png)
+![Lighthouse report](https://raw.githubusercontent.com/hecmocer-pro/hecmocer-pro.github.com/master/media/LighthouseReport_08_2020.png)
+
+---
+
+## Lighthouse report — 2018
+
+![Lighthouse report](https://raw.githubusercontent.com/hecmocer-pro/hecmocer-pro.github.com/master/media/LighthouseReport_08_2018.png)
