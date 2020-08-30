@@ -1,0 +1,3 @@
+[submodule "fountainThreeJS"]
+	path = fountainThreeJS
+	url = https://github.com/hecmocer-pro/fountainThreeJS.git
