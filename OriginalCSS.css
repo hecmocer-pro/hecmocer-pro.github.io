@@ -24,29 +24,29 @@ ul {
     box-shadow: 0 32px 200px -70px rgba(0, 0, 0, 0.50);
     position: relative;
 
-    width: calc(100vw - 2 * 8 * min(1vh, 1vw));
+    width: calc(100vw - 2 * 8 * min(.5vh, .5vw));
     /* width: calc(100vw - 80px - 80px); */
-    height: calc(100vh - 2 * 8 * min(1vh, 1vw));
+    height: calc(100vh - 2 * 8 * min(.5vh, .5vw));
     /* height: calc(100vh - 80px - 80px); */
-    transform: translate(calc(8 * min(1vh, 1vw)), calc(8 * min(1vh, 1vw))) scale(0.8);
+    transform: translate(calc(8 * min(.5vh, .5vw)), calc(8 * min(.5vh, .5vw))) scale(0.8);
     /* left: 80px; top: 80px; */
-    border-radius: calc(min(1vh, 1vw) * 8);
+    border-radius: calc(min(.5vh, .5vw) * 8);
     /* border-radius: 80px; */
 
-    /* transform: translate(calc(8 * min(1vh, 1vw)), calc(8 * min(1vh, 1vw))) scale(0.5) rotate(0.05turn); */
+    /* transform: translate(calc(8 * min(.5vh, .5vw)), calc(8 * min(.5vh, .5vw))) scale(0.5) rotate(0.05turn); */
 }
 
 .pageContainer-inside {
     overflow: hidden;
     position: relative;
 
-    transform: translate(calc(min(1vh, 1vw) * 3 / 2), calc(min(1vh, 1vw) * 3 / 2));
+    transform: translate(calc(min(.5vh, .5vw) * 3 / 2), calc(min(.5vh, .5vw) * 3 / 2));
     /* left: 32px; top: 32px; */
-    width: calc(100vw - 2 * 8 * min(1vh, 1vw) - min(1vh, 1vw) * 3);
+    width: calc(100vw - 2 * 8 * min(.5vh, .5vw) - min(.5vh, .5vw) * 3);
     /* width: calc(100vw - 80px - 80px - 32px - 32px); */
-    height: calc(100vh - 2 * 8 * min(1vh, 1vw) - min(1vh, 1vw) * 3);
+    height: calc(100vh - 2 * 8 * min(.5vh, .5vw) - min(.5vh, .5vw) * 3);
     /* height: calc(100vh - 80px - 80px - 32px - 32px); */
-    border-radius: calc(min(1vh, 1vw) * 7);
+    border-radius: calc(min(.5vh, .5vw) * 7);
     /* border-radius: 50px; */
 }
 
@@ -521,58 +521,58 @@ ul {
 
     @keyframes device-entry {
         0% {
-            transform: translate(calc(8 * min(1vh, 1vw)), calc(8 * min(1vh, 1vw))) scale(0.8);
+            transform: translate(calc(8 * min(.5vh, .5vw)), calc(8 * min(.5vh, .5vw))) scale(0.8);
         }
 
         100% {
-            transform: translate(calc(8 * min(1vh, 1vw)), calc(8 * min(1vh, 1vw))) scale(1);
+            transform: translate(calc(8 * min(.5vh, .5vw)), calc(8 * min(.5vh, .5vw))) scale(1);
         }
     }
 
     /* from https://www.w3schools.com/howto/howto_css_shake_image.asp */
     @keyframes reached-bottom {
         0% {
-            transform: translate(calc(8 * min(1vh, 1vw) + 1px), calc(8 * min(1vh, 1vw) + 1px)) scale(1) rotate(0deg);
+            transform: translate(calc(8 * min(.5vh, .5vw) + 1px), calc(8 * min(.5vh, .5vw) + 1px)) scale(1) rotate(0deg);
         }
 
         10% {
-            transform: translate(calc(8 * min(1vh, 1vw) + -1px), calc(8 * min(1vh, 1vw) + -2px)) scale(1) rotate(-1deg);
+            transform: translate(calc(8 * min(.5vh, .5vw) + -1px), calc(8 * min(.5vh, .5vw) + -2px)) scale(1) rotate(-1deg);
         }
 
         20% {
-            transform: translate(calc(8 * min(1vh, 1vw) + -3px), calc(8 * min(1vh, 1vw) + 0px)) scale(1) rotate(1deg);
+            transform: translate(calc(8 * min(.5vh, .5vw) + -3px), calc(8 * min(.5vh, .5vw) + 0px)) scale(1) rotate(1deg);
         }
 
         30% {
-            transform: translate(calc(8 * min(1vh, 1vw) + 3px), calc(8 * min(1vh, 1vw) + 2px)) scale(1) rotate(0deg);
+            transform: translate(calc(8 * min(.5vh, .5vw) + 3px), calc(8 * min(.5vh, .5vw) + 2px)) scale(1) rotate(0deg);
         }
 
         40% {
-            transform: translate(calc(8 * min(1vh, 1vw) + 1px), calc(8 * min(1vh, 1vw) + -1px)) scale(1) rotate(1deg);
+            transform: translate(calc(8 * min(.5vh, .5vw) + 1px), calc(8 * min(.5vh, .5vw) + -1px)) scale(1) rotate(1deg);
         }
 
         50% {
-            transform: translate(calc(8 * min(1vh, 1vw) + -1px), calc(8 * min(1vh, 1vw) + 2px)) scale(1) rotate(-1deg);
+            transform: translate(calc(8 * min(.5vh, .5vw) + -1px), calc(8 * min(.5vh, .5vw) + 2px)) scale(1) rotate(-1deg);
         }
 
         60% {
-            transform: translate(calc(8 * min(1vh, 1vw) + -3px), calc(8 * min(1vh, 1vw) + 1px)) scale(1) rotate(0deg);
+            transform: translate(calc(8 * min(.5vh, .5vw) + -3px), calc(8 * min(.5vh, .5vw) + 1px)) scale(1) rotate(0deg);
         }
 
         70% {
-            transform: translate(calc(8 * min(1vh, 1vw) + 3px), calc(8 * min(1vh, 1vw) + 1px)) scale(1) rotate(-1deg);
+            transform: translate(calc(8 * min(.5vh, .5vw) + 3px), calc(8 * min(.5vh, .5vw) + 1px)) scale(1) rotate(-1deg);
         }
 
         80% {
-            transform: translate(calc(8 * min(1vh, 1vw) + -1px), calc(8 * min(1vh, 1vw) + -1px)) scale(1) rotate(1deg);
+            transform: translate(calc(8 * min(.5vh, .5vw) + -1px), calc(8 * min(.5vh, .5vw) + -1px)) scale(1) rotate(1deg);
         }
 
         90% {
-            transform: translate(calc(8 * min(1vh, 1vw) + 1px), calc(8 * min(1vh, 1vw) + 2px)) scale(1) rotate(0deg);
+            transform: translate(calc(8 * min(.5vh, .5vw) + 1px), calc(8 * min(.5vh, .5vw) + 2px)) scale(1) rotate(0deg);
         }
 
         100% {
-            transform: translate(calc(8 * min(1vh, 1vw) + 1px), calc(8 * min(1vh, 1vw) + -2px)) scale(1) rotate(-1deg);
+            transform: translate(calc(8 * min(.5vh, .5vw) + 1px), calc(8 * min(.5vh, .5vw) + -2px)) scale(1) rotate(-1deg);
         }
     }
 }
