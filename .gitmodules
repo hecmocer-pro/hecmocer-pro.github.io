@@ -4,3 +4,6 @@
 [submodule "3d-portfolio"]
 	path = 3d-portfolio
 	url = https://github.com/hecmocer-pro/3d-portfolio.git
+[submodule "DailyQuests"]
+	path = DailyQuests
+	url = https://github.com/hecmocer-pro/DailyQuests.git
