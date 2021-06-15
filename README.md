@@ -1,5 +1,11 @@
 ## :memo: Changelog
 
+### 1.7.0 - August 2021
+  - Added 3d-portfolio project
+  - Added Beezus photography project
+  - Added Codemotion2020 talk link
+  - Added Daily quests project
+
 ### 1.6.0 - August 2020
   - Added 404 page
   - Refactored JS to improve readability and to replace spaghetti code by ravioli code
