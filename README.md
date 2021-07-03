@@ -1,10 +1,12 @@
 ## :memo: Changelog
 
-### 1.7.0 - August 2021
+### 1.7.0 - July 2021
+  - Added Daily Quest tracker project
+
+### 1.7.0 - June 2021
   - Added 3d-portfolio project
   - Added Beezus photography project
   - Added Codemotion2020 talk link
-  - Added Daily quests project
 
 ### 1.6.0 - August 2020
   - Added 404 page
