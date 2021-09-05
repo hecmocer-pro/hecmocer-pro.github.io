@@ -1,7 +1,7 @@
 ## :memo: Changelog
 
 ### 1.8.0 - September 2021
-  - Added RankedGamingSeasons project
+  - Added Ranked Gaming Seasons project
 
 ### 1.7.0 - July 2021
   - Added Daily Quest tracker project
