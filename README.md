@@ -1,5 +1,8 @@
 ## :memo: Changelog
 
+### 1.9.0 - October 2021
+  - Added the NBBA app
+
 ### 1.8.0 - September 2021
   - Added Ranked Gaming Seasons project
 
