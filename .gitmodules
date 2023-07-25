@@ -16,3 +16,6 @@
 [submodule "NBBA"]
 	path = NBBA
 	url = https://github.com/hecmocer-pro/NBBA-clock.git
+[submodule "creativity-boost"]
+	path = creativity-boost
+	url = https://github.com/hecmocer-pro/creativity-boost.git
