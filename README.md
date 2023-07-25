@@ -1,5 +1,9 @@
 ## :memo: Changelog
 
+### 2.0.0 - July 2023
+  - Reworked the portfolio into simplicity
+  - Moved old portfolio into /PortfolioV3
+
 ### 1.9.0 - October 2021
   - Added the NBBA app
 
