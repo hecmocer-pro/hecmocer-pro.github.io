@@ -1,6 +1,6 @@
 # hecmocer-pro.github.io
 
-[2023] My personal portfolio and project showcase, built as a static website.
+[2018-2023] My personal portfolio and project showcase, built as a static website.
 
 ## :memo: Changelog
 
