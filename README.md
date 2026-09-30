@@ -1,3 +1,7 @@
+# hecmocer-pro.github.io
+
+My personal portfolio and project showcase, built as a static website.
+
 ## :memo: Changelog
 
 ### 2.0.0 - July 2023
